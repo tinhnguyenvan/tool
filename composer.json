@@ -1,0 +1,27 @@
+{
+  "name": "tinhphp/tool",
+  "authors": [
+    {
+      "name": "Tình Nguyễn Văn",
+      "email": "tinhnguyenvan91@gmail.com"
+    }
+  ],
+  "require": {
+    "maatwebsite/excel": "^3.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "TinhPHP\\Tool\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "TinhPHP\\Tool\\ToolServiceProvider"
+      ],
+      "aliases": {
+        "Tool": "TinhPHP\\Tool\\Facades\\ToolFacade"
+      }
+    }
+  }
+}
