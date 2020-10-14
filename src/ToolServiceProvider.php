@@ -67,8 +67,8 @@ class ToolServiceProvider extends ServiceProvider
     /**
      * Merge the given configuration with the existing configuration.
      *
-     * @param string $path
-     * @param string $key
+     * @param $path
+     * @param $key
      * @return void
      */
     protected function mergeConfigFrom($path, $key)

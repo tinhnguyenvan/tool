@@ -17,8 +17,13 @@ class InstallToolPackage extends Command
         $this->info('Publishing configuration...');
 
         $this->call('vendor:publish', [
-            '--provider' => "TinhPHP\Tool\ToolServiceProvider.php",
+            '--provider' => "TinhPHP\Tool\ToolServiceProvider",
             '--tag' => 'config'
+        ]);
+
+        $this->call('vendor:publish', [
+            '--provider' => "TinhPHP\Tool\ToolServiceProvider",
+            '--tag' => 'migrations'
         ]);
 
         $this->info('Installed Tool Package');
