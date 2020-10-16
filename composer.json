@@ -20,7 +20,7 @@
         "TinhPHP\\Tool\\ToolServiceProvider"
       ],
       "aliases": {
-        "Tool": "TinhPHP\\Tool\\Facades\\ToolFacade"
+        "Tool": "ClassifiedFacade"
       }
     }
   }

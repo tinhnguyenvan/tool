@@ -1,6 +1,6 @@
 <?php
 
-namespace TinhPHP\School\Facades;
+namespace TinhPHP\Tool\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
