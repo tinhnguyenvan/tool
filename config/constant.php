@@ -2,7 +2,7 @@
 
 return [
     'MENU_APP' => [
-        [
+        'nav.menu_left.tool' => [
             'title' => 'nav.menu_left.tool',
             'url' => '',
             'icon' => 'fa fa-code',
