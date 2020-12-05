@@ -46,9 +46,9 @@ class ToolController extends AdminController
             'file' => $file,
             'tabs' => $this->toolService->tabs(),
             'tabActive' => $request->get('tab') ?? 'url',
-            'title' => trans('tool.create_qr_code')
+            'title' => trans('lang_tool::tool.create_qr_code')
         ];
-        return view('admin/tool.qr_code.index', $this->render($data));
+        return view('view_tool::admin.qr_code.index', $this->render($data));
     }
 
     public function handleQrCode(Request $request)
@@ -76,7 +76,7 @@ class ToolController extends AdminController
             'title' => trans('nav.menu_left.tool_short_link'),
             'items' => $items,
         ];
-        return view('admin/tool.short_link.list', $this->render($data));
+        return view('view_tool::admin.short_link.list', $this->render($data));
     }
 
     public function createShortLink(Request $request)
@@ -86,7 +86,7 @@ class ToolController extends AdminController
             'title' => trans('common.add') . ' ' . trans('nav.menu_left.tool_short_link'),
         ];
 
-        return view('admin/tool.short_link.form', $this->render($data));
+        return view('view_tool::admin.short_link.form', $this->render($data));
     }
 
     public function handleCreateShortLink(Request $request)

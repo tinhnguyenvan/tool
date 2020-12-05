@@ -113,12 +113,12 @@ class ToolService extends BaseService
     public function tabs()
     {
         return [
-            'url' => trans('tool.create_qr_url'),
-            'email' => trans('tool.create_qr_email'),
-            'wifi' => trans('tool.create_qr_wifi'),
-            'vcard' => trans('tool.create_qr_vcard'),
-            'sms' => trans('tool.create_qr_sms'),
-            'text' => trans('tool.create_qr_text'),
+            'url' => trans('lang_tool::tool.create_qr_url'),
+            'email' => trans('lang_tool::tool.create_qr_email'),
+            'wifi' => trans('lang_tool::tool.create_qr_wifi'),
+            'vcard' => trans('lang_tool::tool.create_qr_vcard'),
+            'sms' => trans('lang_tool::tool.create_qr_sms'),
+            'text' => trans('lang_tool::tool.create_qr_text'),
         ];
     }
 }

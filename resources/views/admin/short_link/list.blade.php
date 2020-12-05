@@ -21,10 +21,10 @@
                 <table class="table table-responsive-sm table-bordered table-hover font12">
                     <thead>
                     <tr class="bg-light">
-                        <th>{{ trans('tool.short_link.title') }}</th>
-                        <th>{{ trans('tool.short_link.short_url') }}</th>
-                        <th>{{ trans('tool.short_link.url') }}</th>
-                        <th>{{ trans('tool.short_link.views') }}</th>
+                        <th>{{ trans('lang_tool::tool.short_link.title') }}</th>
+                        <th>{{ trans('lang_tool::tool.short_link.short_url') }}</th>
+                        <th>{{ trans('lang_tool::tool.short_link.url') }}</th>
+                        <th>{{ trans('lang_tool::tool.short_link.views') }}</th>
                         <th>{{ trans('common.updated_at') }}</th>
                         <th></th>
                     </tr>

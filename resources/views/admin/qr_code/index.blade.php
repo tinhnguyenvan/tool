@@ -27,7 +27,7 @@
                                 @endforeach
                             </ul>
                             <div class="tab-content">
-                                @include('admin.tool.qr_code.tab.'.$tabActive)
+                                @include('view_tool::admin.qr_code.tab.'.$tabActive)
                             </div>
 
                             <div class="tab-content-file clear" style="margin: 10px 0">
