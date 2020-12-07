@@ -13,6 +13,9 @@ class ToolServiceProvider extends ServiceProvider
     {
         // config
         if ($this->app->runningInConsole()) {
+            // load migration
+            $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+
             // install package
             $this->commands(
                 [
