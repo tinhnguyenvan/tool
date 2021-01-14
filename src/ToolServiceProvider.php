@@ -2,6 +2,8 @@
 
 namespace TinhPHP\Tool;
 
+use App\Models\Plugin;
+use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -9,8 +11,15 @@ use TinhPHP\Tool\Console\InstallToolPackage;
 
 class ToolServiceProvider extends ServiceProvider
 {
+    public $pluginName = 'tool';
+
     public function boot()
     {
+        // check enable and disable plugin
+        if ($this->plugin()->status != Plugin::STASTUS_ACTIVE) {
+            return null;
+        }
+
         // config
         if ($this->app->runningInConsole()) {
             // load migration
@@ -41,6 +50,28 @@ class ToolServiceProvider extends ServiceProvider
         // view
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'view_tool');
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'lang_tool');
+    }
+
+    public function plugin()
+    {
+        // check enable and disable plugin
+        $plugin = Plugin::query()->where('code', $this->pluginName)->first();
+        if (empty($plugin)) {
+            $plugin = Plugin::query()->updateOrCreate(
+                [
+                    'code' => $this->pluginName,
+                ],
+                [
+                    'version' => '1.0.1',
+                    'status' => 1,
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+
+                ]
+            );
+        }
+
+        return $plugin;
     }
 
     public function register()
@@ -84,8 +115,8 @@ class ToolServiceProvider extends ServiceProvider
     /**
      * Merges the configs together and takes multi-dimensional arrays into account.
      *
-     * @param  array  $original
-     * @param  array  $merging
+     * @param array $original
+     * @param array $merging
      * @return array
      */
     protected function mergeConfig(array $original, array $merging)
@@ -93,11 +124,11 @@ class ToolServiceProvider extends ServiceProvider
         $array = array_merge($original, $merging);
 
         foreach ($original as $key => $value) {
-            if (! is_array($value)) {
+            if (!is_array($value)) {
                 continue;
             }
 
-            if (! Arr::exists($merging, $key)) {
+            if (!Arr::exists($merging, $key)) {
                 continue;
             }
 
