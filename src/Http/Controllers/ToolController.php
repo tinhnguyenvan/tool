@@ -36,7 +36,7 @@ final class ToolController extends SiteController
     {
         $object = ToolShortLink::query()->where('short_url', $shortUrl)->first();
         if (!empty($object->id) && !empty($object->url)) {
-            $object->increment('views');
+            $object->where('id', $object->id)->increment('views');
             sleep(2);
             return redirect($object->url, 301);
         }
