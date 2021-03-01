@@ -3,7 +3,6 @@
 namespace TinhPHP\Tool;
 
 use App\Models\Plugin;
-use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +15,7 @@ class ToolServiceProvider extends ServiceProvider
     public function boot()
     {
         // check enable and disable plugin
-        if ($this->plugin()->status != Plugin::STASTUS_ACTIVE) {
+        if ($this->plugin() != Plugin::STASTUS_ACTIVE) {
             return null;
         }
 
@@ -54,24 +53,16 @@ class ToolServiceProvider extends ServiceProvider
 
     public function plugin()
     {
-        // check enable and disable plugin
-        $plugin = Plugin::query()->where('code', $this->pluginName)->first();
-        if (empty($plugin)) {
-            $plugin = Plugin::query()->updateOrCreate(
-                [
-                    'code' => $this->pluginName,
-                ],
-                [
-                    'version' => '1.0.1',
-                    'status' => 1,
-                    'created_at' => Carbon::now(),
-                    'updated_at' => Carbon::now(),
-
-                ]
-            );
+        $status = false;
+        try {
+            // check enable and disable plugin
+            $plugin = Plugin::query()->where('code', $this->pluginName)->first();
+            if (!empty($plugin)) {
+                $status = $plugin->status;
+            }
+        } catch (\Exception $exception) {
         }
-
-        return $plugin;
+        return $status;
     }
 
     public function register()
