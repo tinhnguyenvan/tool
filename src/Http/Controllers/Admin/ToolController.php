@@ -3,7 +3,6 @@
 
 namespace TinhPHP\Tool\Http\Controllers\Admin;
 
-use App\Http\Controllers\Admin\AdminController;
 use App\Models\Media;
 use TinhPHP\Tool\Models\ToolShortLink;
 use App\Services\MediaService;
@@ -18,7 +17,7 @@ use Illuminate\Http\Request;
  * @property MediaService $mediaService
  * @property ToolShortLinkService $toolShortLinkService
  */
-class ToolController extends AdminController
+class ToolController extends AdminToolController
 {
     public function __construct(
         ToolService $toolService,
