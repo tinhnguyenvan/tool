@@ -14,11 +14,6 @@ class ToolServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        // check enable and disable plugin
-        if ($this->plugin() != Plugin::STASTUS_ACTIVE) {
-            return null;
-        }
-
         // config
         if ($this->app->runningInConsole()) {
             // load migration
