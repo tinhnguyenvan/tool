@@ -20,6 +20,12 @@ return [
                     'url' => 'tools/short_link',
                     'icon' => 'fa fa-link',
                 ],
+                [
+                    'plugin' => 'tool',
+                    'title' => 'Wordpress Tool',
+                    'url' => 'tools/wordpress-tool',
+                    'icon' => 'fa fa-wordpress',
+                ],
             ]
         ],
     ]
