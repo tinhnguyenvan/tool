@@ -16,7 +16,7 @@
                     </div>
 
                     <div class="card-body collapse show" id="collapseExample">
-                        @include('admin.element.form.input', ['name' => 'link_api_post', 'text' => 'Link api post WP', 'value' => old('link_api_post'), 'placeholder'=> 'Ex: '.base_url('wp-json/wp/v2/posts')])
+                        @include('admin.element.form.input', ['name' => 'link_api_post', 'text' => 'Link Domain', 'value' => old('link_api_post'), 'placeholder'=> 'Ex: '.base_url()])
 
                         <div class="form-actions">
                             <button class="btn btn-primary" type="submit">
