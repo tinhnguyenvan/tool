@@ -43,7 +43,7 @@ class WordpressToolController extends AdminToolController
         $totalItem = 0;
         do {
             try {
-                $response = $client->get($params['link_api_post'] . '/wp-json/wp/v2/posts?page=' . $page);
+                $response = $client->get($params['link_api_post'] . '/wp-json/wp/v2/posts?orderby=id&order=asc&page=' . $page);
                 $result = json_decode($response->getBody(), true);
                 foreach ($result as $item) {
                     $totalItem++;
