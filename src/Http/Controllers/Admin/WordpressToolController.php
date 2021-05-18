@@ -12,6 +12,7 @@ use App\Services\MediaService;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 /**
  * Class WordpressToolController
@@ -49,6 +50,8 @@ class WordpressToolController extends AdminToolController
                 $response = $client->get($domain . '/wp-json/wp/v2/posts?orderby=id&order=asc&page=' . $page);
                 $result = json_decode($response->getBody(), true);
                 foreach ($result as $item) {
+                    $formData = [];
+
                     $totalItem++;
                     // category
                     $responseCategory = $client->get($domain . '/wp-json/wp/v2/categories/' . $item['categories'][0]);
@@ -68,6 +71,21 @@ class WordpressToolController extends AdminToolController
                     if (!empty($resultTags)) {
                         foreach ($resultTags as $tag) {
                             $tags[] = $tag['name'];
+                        }
+                    }
+
+                    // featured media
+                    if(!empty($item['_links']['wp:featuredmedia'][0]['href'])) {
+                        try {
+                            $responseFeatured = $client->get($item['_links']['wp:featuredmedia'][0]['href']);
+                            $resultFeatured = json_decode($responseFeatured->getBody(), true);
+                            if (!empty($resultFeatured['id'])) {
+
+                                $formData['image_id'] = 0;
+                                $formData['image_url'] = $resultFeatured['guid']['rendered'];
+                            }
+                        } catch (\Exception $e1) {
+                            Log::debug($e1->getMessage());
                         }
                     }
 
