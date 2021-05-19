@@ -43,6 +43,13 @@ class WordpressToolController extends AdminToolController
         $params = $request->all();
 
         $domain = $params['link_api_post'];
+        $domainReplace = 'http://127.0.0.1:8001';
+
+        $replaceContent = '/storage/upload/portfolio/';
+        $replaceContentData = [
+            $domainReplace . '/wp-content/uploads/',
+            $domain . '/wp-content/uploads/',
+        ];
 
         $client = new Client();
         $page = 1;
@@ -86,7 +93,7 @@ class WordpressToolController extends AdminToolController
                                 $formData['image_url'] = $resultFeatured['guid']['rendered'];
 
                                 $formData['image_url'] = str_replace(
-                                    'http://127.0.0.1:8001',
+                                    $domainReplace,
                                     $domain,
                                     $formData['image_url']
                                 );
@@ -108,7 +115,7 @@ class WordpressToolController extends AdminToolController
 
                         $formData[$code]['slug'] = $item['slug'];
                         $formData[$code]['title'] = $item['title']['rendered'];
-                        $formData[$code]['detail'] = $item['content']['rendered'];
+                        $formData[$code]['detail'] = str_replace($replaceContentData, $replaceContent, $item['content']['rendered']);
                         $formData[$code]['summary'] = $item['excerpt']['rendered'];
 
                         if (!empty($myPost->slug)) {
