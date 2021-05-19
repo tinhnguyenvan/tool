@@ -4,6 +4,7 @@
 namespace TinhPHP\Tool\Http\Controllers\Admin;
 
 use App\Models\Language;
+use App\Models\Media;
 use App\Models\Post;
 use App\Models\PostCategory;
 use App\Models\PostTag;
@@ -13,6 +14,7 @@ use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Class WordpressToolController
@@ -49,7 +51,7 @@ class WordpressToolController extends AdminToolController
             try {
                 $response = $client->get($domain . '/wp-json/wp/v2/posts?orderby=id&order=asc&page=' . $page);
                 $result = json_decode($response->getBody(), true);
-                foreach ($result as $item) {
+                foreach ($result as $key => $item) {
                     $formData = [];
 
                     $totalItem++;
@@ -75,14 +77,19 @@ class WordpressToolController extends AdminToolController
                     }
 
                     // featured media
-                    if(!empty($item['_links']['wp:featuredmedia'][0]['href'])) {
+                    if (!empty($item['_links']['wp:featuredmedia'][0]['href'])) {
                         try {
                             $responseFeatured = $client->get($item['_links']['wp:featuredmedia'][0]['href']);
                             $resultFeatured = json_decode($responseFeatured->getBody(), true);
                             if (!empty($resultFeatured['id'])) {
-
                                 $formData['image_id'] = 0;
                                 $formData['image_url'] = $resultFeatured['guid']['rendered'];
+
+                                $formData['image_url'] = str_replace(
+                                    'http://127.0.0.1:8001',
+                                    $domain,
+                                    $formData['image_url']
+                                );
                             }
                         } catch (\Exception $e1) {
                             Log::debug($e1->getMessage());
@@ -114,10 +121,58 @@ class WordpressToolController extends AdminToolController
 
                         // tags
                         PostTag::insertOrUpdateTags($myObject->tags, PostTag::SOURCE_POST, $myObject->id);
+
+                        // save image
+                        if ($myObject->image_id == 0 && $myObject->image_url != '') {
+                            $destinationPath = storage_path() . '/app/public';
+
+                            $nameOldImage = explode('/', $myObject->image_url);
+                            $nameOldImage = end($nameOldImage);
+
+                            $minType = explode('.', $myObject->image_url);
+                            $minType = end($minType);
+
+                            $contents = file_get_contents(
+                                str_replace($nameOldImage, urlencode($nameOldImage), $myObject->image_url)
+                            );
+
+                            $prefixPath = '/upload/' . date('Y/m/d/');
+                            $fileName = 'wp_' . date('Ymd') . '_' . $item['id'] . '.' . $minType;
+
+                            file_put_contents($destinationPath . $prefixPath . $fileName, $contents);
+
+                            $params = [
+                                'collection_name' => '',
+                                'name' => $fileName,
+                                'file_name' => $prefixPath . $fileName,
+                                'size' => 0,
+                                'mime_type' => $minType,
+                                'disk' => $prefixPath . $fileName,
+                                'created_at' => date('Y-m-d H:i:s'),
+                                'model_id' => $myObject->id,
+                                'model_type' => Post::class,
+                                'creator_id' => Auth::id() ?? 0,
+                                'custom_properties' => json_encode([]),
+                                'manipulations' => json_encode([]),
+                                'responsive_images' => json_encode([]),
+                            ];
+                            $paramsQuery = [
+                                'object_type' => Media::OBJECT_TYPE_POST,
+                                'object_id' => $myObject->id,
+                            ];
+                            $upload = Media::query()->updateOrCreate($paramsQuery, $params);
+
+                            if (!empty($upload->id)) {
+                                $myObject->image_id = $upload->id;
+                                $myObject->image_url = $upload->file_name;
+                                $myObject->save();
+                            }
+                        }
                     }
                 }
                 $isError = 0;
             } catch (\Exception $e) {
+                Log::debug($e->getMessage());
                 $isError = 1;
             }
             $page++;
