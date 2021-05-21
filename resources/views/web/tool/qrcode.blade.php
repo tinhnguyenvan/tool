@@ -1,4 +1,4 @@
-@extends('resources.views.site.layout.tool')
+@extends('view_tool::web.layout.tool')
 
 @section('content')
     <div class="row list-icon-emoji">
