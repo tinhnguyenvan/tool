@@ -34,7 +34,7 @@
                         $active = '';
                         if (strpos($line, '# group:') !== false) {
                             $slug = \Illuminate\Support\Str::slug($line);
-                            $href = base_url('tool/icon-facebook?active='.$slug.'#' . $slug);
+                            $href = base_url('tool/facebook-icon?active='.$slug.'#' . $slug);
                             $active = request()->input('active') == $slug ? 'active' : '';
                             echo '<a href="' . $href . '" class="collection-item ' . $active . '">↪ ';
                             echo str_replace('# group:', '', $line);
@@ -57,7 +57,7 @@
                 $line = fgets($file);
                 if (strpos($line, '# group:') !== false) {
                     echo '<h4 id="' . \Illuminate\Support\Str::slug($line) . '">';
-                    echo '<a href="' . base_url('tool/icon-facebook#' . \Illuminate\Support\Str::slug($line)) . '">';
+                    echo '<a href="' . base_url('tool/facebook-icon#' . \Illuminate\Support\Str::slug($line)) . '">';
                     echo str_replace('# group:', '', $line);
                     echo '</a>';
                     echo '</h4>';
@@ -65,7 +65,7 @@
                     echo '<h6 id="' . \Illuminate\Support\Str::slug(
                             $line
                         ) . '" style="margin-top: 20px; font-size: 10px">';
-                    echo '<a href="' . base_url('tool/icon-facebook#' . \Illuminate\Support\Str::slug($line)) . '">';
+                    echo '<a href="' . base_url('tool/facebook-icon#' . \Illuminate\Support\Str::slug($line)) . '">';
                     echo '- ' . trans('common.emoji.' . trim(str_replace('# subgroup: ', '', $line)));
                     echo '</a>';
                     echo '</h6>';

@@ -38,14 +38,14 @@
     <div class="nav-wrapper container">
         <a id="logo-container" href="{{ base_url() }}" class="brand-logo">{{ $config['company_name'] }}</a>
         <ul class="right hide-on-med-and-down">
-            <li><a class="@if(request()->fullUrl() == base_url('tool/facebook-icon')) active @endif" href="{{ base_url('tool/facebook-icon') }}">🔎 Facebook Icon</a></li>
-            <li><a class="@if(request()->fullUrl() == base_url('tool/facebook-text')) active @endif" href="{{ base_url('tool/facebook-text') }}">🔠 Facebook Text</a></li>
+            <li><a class="@if(request()->url() == base_url('tool/facebook-icon')) active @endif" href="{{ base_url('tool/facebook-icon') }}">🔎 Facebook Icon</a></li>
+            <li><a class="@if(request()->url() == base_url('tool/facebook-text')) active @endif" href="{{ base_url('tool/facebook-text') }}">🔠 Facebook Text</a></li>
 {{--            <li><a class="@if(request()->url() == base_url('tool/generate-qrcode')) active @endif" href="{{ base_url('tool/generate-qrcode') }}">📌 Generate QR Code</a></li>--}}
         </ul>
 
         <ul id="nav-mobile" class="sidenav">
-            <li><a class="@if(request()->fullUrl() == base_url('tool/facebook-icon')) active @endif" href="{{ base_url('tool/facebook-icon') }}">🔎 Facebook Icon</a></li>
-            <li><a class="@if(request()->fullUrl() == base_url('tool/facebook-text')) active @endif" href="{{ base_url('tool/facebook-text') }}">🔠 Facebook Text</a></li>
+            <li><a class="@if(request()->url() == base_url('tool/facebook-icon')) active @endif" href="{{ base_url('tool/facebook-icon') }}">🔎 Facebook Icon</a></li>
+            <li><a class="@if(request()->url() == base_url('tool/facebook-text')) active @endif" href="{{ base_url('tool/facebook-text') }}">🔠 Facebook Text</a></li>
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
