@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
     @include('site.element.head')
-    <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
     <link href="{{ asset("site/css/materialize.min.css") }}" rel="stylesheet" media="screen,projection"/>
-    <style type="text/css">
+    <style>
         nav ul a,
         nav .brand-logo {
             color: #444;
@@ -16,6 +14,7 @@
             background: #0a76b7;
             color: #fff;
         }
+
         p {
             line-height: 2rem;
         }
@@ -29,27 +28,51 @@
         }
 
     </style>
-
+    <script src="{{ asset("site/js/jquery-3.2.1.min.js") }}" type="text/javascript"></script>
+    <script src="{{ asset("site/js/materialize.min.js") }}" type="text/javascript"></script>
+    <script src="{{ asset("site/js/clipboard.min.js") }}" type="text/javascript"></script>
 </head>
 
 <body>
 <div class="navbar-fixed">
-<nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-        <a id="logo-container" href="{{ base_url() }}" class="brand-logo">{{ $config['company_name'] }}</a>
-        <ul class="right hide-on-med-and-down">
-            <li><a class="@if(request()->url() == base_url('tool/facebook-icon')) active @endif" href="{{ base_url('tool/facebook-icon') }}">🔎 Facebook Icon</a></li>
-            <li><a class="@if(request()->url() == base_url('tool/facebook-text')) active @endif" href="{{ base_url('tool/facebook-text') }}">🔠 Facebook Text</a></li>
-{{--            <li><a class="@if(request()->url() == base_url('tool/generate-qrcode')) active @endif" href="{{ base_url('tool/generate-qrcode') }}">📌 Generate QR Code</a></li>--}}
-        </ul>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="{{ base_url() }}" class="brand-logo">{{ $config['company_name'] }}</a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a class="@if(request()->url() == base_url('tool/facebook-icon')) active @endif"
+                       href="{{ base_url('tool/facebook-icon') }}">
+                        🔎 Facebook Icon
+                    </a>
+                </li>
+                <li>
+                    <a class="@if(request()->url() == base_url('tool/facebook-text')) active @endif"
+                       href="{{ base_url('tool/facebook-text') }}">
+                        🔠 Facebook Text
+                    </a>
+                </li>
+                {{--            <li><a class="@if(request()->url() == base_url('tool/generate-qrcode')) active @endif" href="{{ base_url('tool/generate-qrcode') }}">📌 Generate QR Code</a></li>--}}
+            </ul>
 
-        <ul id="nav-mobile" class="sidenav">
-            <li><a class="@if(request()->url() == base_url('tool/facebook-icon')) active @endif" href="{{ base_url('tool/facebook-icon') }}">🔎 Facebook Icon</a></li>
-            <li><a class="@if(request()->url() == base_url('tool/facebook-text')) active @endif" href="{{ base_url('tool/facebook-text') }}">🔠 Facebook Text</a></li>
-        </ul>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-</nav>
+            <ul id="nav-mobile" class="sidenav">
+                <li>
+                    <a class="@if(request()->url() == base_url('tool/facebook-icon')) active @endif"
+                       href="{{ base_url('tool/facebook-icon') }}">
+                        🔎 Facebook Icon
+                    </a>
+                </li>
+                <li>
+                    <a class="@if(request()->url() == base_url('tool/facebook-text')) active @endif"
+                       href="{{ base_url('tool/facebook-text') }}">
+                        🔠 Facebook Text
+                    </a>
+                </li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+    </nav>
 </div>
 
 <div class="container">
@@ -102,12 +125,9 @@
 
 
 <!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="{{ asset("site/js/materialize.min.js") }}"></script>
-<script src="{{ asset("site/js/clipboard.min.js") }}" type="text/javascript"></script>
 <script type="text/javascript">
 
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('.collapsible').collapsible();
     });
 
