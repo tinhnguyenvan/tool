@@ -26,6 +26,7 @@ final class FacebookController extends SiteController
         $pathFile = public_path('site/emoji/emoji.txt');
 
         $data = [
+            'active_menu' => 'facebook_icon',
             'file_name' => $pathFile,
             'keyword' => 'icon facebook, mat cuoi facebook, fbook, facebook emoticon, smile facebook, facebook symbols, bieu tuong facebook, emoji, viet status facebook',
             'description' => 'Tổng hợp full bộ icon facebook đầy đủ nhất, mới nhất với nhiều trạng thái khác nhau, công cụ viết status facebook kèm icon tiện lợi nhất chỉ cần click vào biểu tượng cảm xúc facebook và chọn nhiều icon facebook khác nhau',
@@ -37,6 +38,7 @@ final class FacebookController extends SiteController
     public function text()
     {
         $data = [
+            'active_menu' => 'facebook_text',
             'description' => 'Công cụ đổi font chữ Facebook online miễn phí với hơn 80 phông ĐẸP, ĐỘC, LẠ. Hãy tạo điểm nhấn trong từng nét chữ với Facebook Text Generator',
             'title' => 'Công cụ Đổi Font Chữ Facebook [kiểu đẹp thay thế YayText]',
             'keywords' => 'text,chữ,văn bản,đặc biệt,unicode,symbol,post,story,status,bài viết,miễn phí,Facebook',
