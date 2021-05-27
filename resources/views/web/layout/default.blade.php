@@ -27,6 +27,10 @@
             margin: 0;
         }
 
+        .sidenav-overlay {
+            display: none !important;
+        }
+
     </style>
     <script src="{{ asset("site/js/jquery-3.2.1.min.js") }}" type="text/javascript"></script>
     <script src="{{ asset("site/js/materialize.min.js") }}" type="text/javascript"></script>
