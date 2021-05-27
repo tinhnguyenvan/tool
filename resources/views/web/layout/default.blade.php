@@ -37,7 +37,7 @@
 <div class="navbar-fixed">
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">
-            <ul class="right hide-on-med-and-down">
+            <ul class="hide-on-med-and-down">
                 @foreach(\TinhPHP\Tool\Models\Nav::menuMain() as $item)
                     <li>
                         <a class="@if($active_menu == $item['active']) active @endif" href="{{ $item['link'] }}">
