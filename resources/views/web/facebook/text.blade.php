@@ -1,4 +1,4 @@
-@extends('view_tool::web.layout.tool')
+@extends('view_tool::web.layout.default')
 
 @section('content')
     <style>

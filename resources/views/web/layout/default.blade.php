@@ -37,36 +37,24 @@
 <div class="navbar-fixed">
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="{{ base_url() }}" class="brand-logo">{{ $config['company_name'] }}</a>
             <ul class="right hide-on-med-and-down">
-                <li>
-                    <a class="@if($active_menu == 'facebook_icon') active @endif"
-                       href="{{ base_url('tool/facebook-icon') }}">
-                        🔎 Facebook Icon
-                    </a>
-                </li>
-                <li>
-                    <a class="@if($active_menu == 'facebook_text') active @endif"
-                       href="{{ base_url('tool/facebook-text') }}">
-                        🔠 Facebook Text
-                    </a>
-                </li>
-                {{--            <li><a class="@if($active_menu == 'generate') active @endif" href="{{ base_url('tool/generate-qrcode') }}">📌 Generate QR Code</a></li>--}}
+                @foreach(\TinhPHP\Tool\Models\Nav::menuMain() as $item)
+                    <li>
+                        <a class="@if($active_menu == $item['active']) active @endif" href="{{ $item['link'] }}">
+                            {!! $item['title'] !!}
+                        </a>
+                    </li>
+                @endforeach
             </ul>
 
             <ul id="nav-mobile" class="sidenav">
-                <li>
-                    <a class="@if($active_menu == 'facebook_icon') active @endif"
-                       href="{{ base_url('tool/facebook-icon') }}">
-                        🔎 Facebook Icon
-                    </a>
-                </li>
-                <li>
-                    <a class="@if($active_menu == 'facebook_text') active @endif"
-                       href="{{ base_url('tool/facebook-text') }}">
-                        🔠 Facebook Text
-                    </a>
-                </li>
+                @foreach(\TinhPHP\Tool\Models\Nav::menuMain() as $item)
+                    <li>
+                        <a class="@if($active_menu == $item['active']) active @endif" href="{{ $item['link'] }}">
+                            {!! $item['title'] !!}
+                        </a>
+                    </li>
+                @endforeach
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger">
                 <i class="material-icons">menu</i>
@@ -116,7 +104,7 @@
    </div>-->
     <div class="footer-copyright">
         <div class="container">
-            Made by <a style="color: #ffd655" href="https://tweb.com.vn">Tình Nguyễn</a>
+            Made by <a style="color: #ffd655" href="https://tweb.com.vn?utm_content=tool">Tình Nguyễn</a>
             | VPS sử dụng <a style="color: #ffd655" href="http://bit.ly/2kAezij" target="_blank">INET</a>
             | Made with 💞 in Long An
         </div>

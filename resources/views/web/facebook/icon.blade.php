@@ -1,4 +1,4 @@
-@extends('view_tool::web.layout.tool')
+@extends('view_tool::web.layout.default')
 {{--https://unicode.org/Public/emoji/13.0/--}}
 <style>
     .label-emoji {
