@@ -11,7 +11,7 @@ class Nav extends Model
         return [
             [
                 'link' => base_url(),
-                'title' => '  <i class="material-icons">home</i> Home',
+                'title' => '<i class="material-icons">home</i>',
                 'active' => '',
             ],
             [
