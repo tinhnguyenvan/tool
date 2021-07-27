@@ -18,8 +18,8 @@
                     </div>
 
                     <div class="card-body collapse show" id="collapseExample">
-                        @include('admin.element.form.input', ['name' => 'title', 'text' => trans('lang_tool::short_link.title'), 'value' => old('title')])
-                        @include('admin.element.form.input', ['name' => 'url', 'text' => trans('lang_tool::short_link.url'), 'value' => old('url')])
+                        @include('admin.element.form.input', ['name' => 'title', 'text' => 'Title', 'value' => old('title')])
+                        @include('admin.element.form.input', ['name' => 'url', 'text' => 'Url', 'value' => old('url')])
 
                         <div class="form-group">
                             <label class="col-form-label" for="short_url">Short Code</label>

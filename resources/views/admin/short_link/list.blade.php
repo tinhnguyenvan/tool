@@ -21,10 +21,9 @@
                 <table class="table table-responsive-sm table-bordered table-hover font12">
                     <thead>
                     <tr class="bg-light">
-                        <th>{{ trans('lang_tool::tool.short_link.title') }}</th>
-                        <th>{{ trans('lang_tool::tool.short_link.short_url') }}</th>
-                        <th>{{ trans('lang_tool::tool.short_link.url') }}</th>
-                        <th>{{ trans('lang_tool::tool.short_link.views') }}</th>
+                        <th>Title</th>
+                        <th>Short url</th>
+                        <th class="text-center">{{ trans('lang_tool::tool.short_link.views') }}</th>
                         <th>{{ trans('common.updated_at') }}</th>
                         <th></th>
                     </tr>
@@ -36,9 +35,6 @@
                                 <td>{{ $item->title }}</td>
                                 <td>
                                     <a href="{{ $item->link_short_url}}" target="_blank">{{ $item->link_short_url}}</a>
-                                </td>
-                                <td>
-                                    <a href="{{ $item->url}}" target="_blank">{{ $item->url}}</a>
                                 </td>
                                 <td class="text-center">{{ $item->views }}</td>
                                 <td>{{ !empty($item->updated_at) ? $item->updated_at->format('d/m/Y H:i') : '' }}</td>
@@ -56,7 +52,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="6">
+                            <td colspan="5">
                                 {{ trans('common.data_empty') }}
                             </td>
                         </tr>
