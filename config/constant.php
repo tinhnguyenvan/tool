@@ -24,14 +24,7 @@ return [
                     'url' => 'tools/short_link',
                     'icon' => 'fa fa-link',
                     'role' => [Role::ROLE_ADMIN, Role::ROLE_MANAGER_MANAGER],
-                ],
-                [
-                    'plugin' => 'tool',
-                    'title' => 'Wordpress Tool',
-                    'url' => 'tools/wordpress-tool',
-                    'icon' => 'fa fa-wordpress',
-                    'role' => [Role::ROLE_ADMIN, Role::ROLE_MANAGER_MANAGER],
-                ],
+                ]
             ]
         ],
     ]
