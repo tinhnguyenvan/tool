@@ -8,6 +8,7 @@
         }
     ],
     "require": {
+        "simplesoftwareio/simple-qrcode": "~2"
     },
     "autoload": {
         "psr-4": {
