@@ -66,9 +66,11 @@
                             $line
                         ) . '" style="margin-top: 20px; font-size: 10px">';
                     echo '<a href="' . base_url('tool/facebook-icon#' . \Illuminate\Support\Str::slug($line)) . '">';
-                    echo '- ' . trans('common.emoji.' . trim(str_replace('# subgroup: ', '', $line)));
+                    echo '- ' . trans('lang_tool::tool.' . trim(str_replace('# subgroup: ', '', $line)));
                     echo '</a>';
                     echo '</h6>';
+
+                    \Illuminate\Support\Facades\Log::debug(trim(str_replace('# subgroup: ', '', $line)));
                 } else {
                     $icons = explode(' ;', $line);
                     $icons = preg_split('/\s+/', $icons[0]);
