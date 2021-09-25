@@ -1,12 +1,12 @@
 <?php
 /**
  * @author: nguyentinh
- * @time: 10/29/19 4:05 PM
+ * @time: 2021/09/25
  */
 
 namespace TinhPHP\Tool\Http\Controllers;
 
-use TinhPHP\Tool\Models\ToolShortLink;
+use Illuminate\View\View;
 
 /**
  * Class QrcodeController.
@@ -18,27 +18,21 @@ class QrcodeController extends ToolController
         parent::__construct();
     }
 
-    public function shortLink($shortUrl)
-    {
-        $object = ToolShortLink::query()->where('short_url', $shortUrl)->first();
-        if (!empty($object->id) && !empty($object->url)) {
-            $object->where('id', $object->id)->increment('views');
-            sleep(2);
-            return redirect($object->url, 301);
-        }
-
-        return view('errors.404');
-    }
-
-    public function generateQrcode()
+    public function index($slug = 'url')
     {
         $data = [
-            'active_menu' => 'generate_qrcode',
+            'active_menu' => $slug,
             'keyword' => 'QR Code Generator for URL, vCard, and more. Add logo, colors, frames, and download in high print quality. Get your free QR Codes now!',
             'description' => 'QR Code Generator for URL, vCard, and more. Add logo, colors, frames, and download in high print quality. Get your free QR Codes now!',
             'title' => 'QR Code Generator | Create Your Free QR Codes'
         ];
 
-        return view('view_tool::web.tool.qrcode', $this->render($data));
+        $view = 'view_tool::web.qrcode.'.$slug;
+
+        if (!view()->exists($view)) {
+            $view = 'view_tool::web.qrcode.url';
+        }
+
+        return view($view, $this->render($data));
     }
 }

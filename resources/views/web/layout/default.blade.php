@@ -70,7 +70,7 @@
     </nav>
 </div>
 
-<div class="">
+<div style="min-height: 400px">
     <div class="section">
 
         @yield('content')
@@ -91,8 +91,8 @@
                <ul>
                    <li><a class="white-text" href="{{ base_url('tool/facebook-icon') }}"><i class="tiny material-icons">share</i> Facebook icon</a></li>
                    <li><a class="white-text" href="{{ base_url('tool/facebook-text') }}"><i class="tiny material-icons">share</i> Facebook font</a></li>
-                   <li><a class="white-text" href="{{ base_url('tool/generate-qrcode') }}"><i class="tiny material-icons">share</i> Qrcode</a></li>
-                   <li><a class="white-text" href="{{ base_url('tool/generate-qrcode') }}"><i class="tiny material-icons">share</i> Rút gọn link</a></li>
+{{--                   <li><a class="white-text" href="{{ base_url('tool/generate-qrcode') }}"><i class="tiny material-icons">share</i> Qrcode</a></li>--}}
+{{--                   <li><a class="white-text" href="{{ base_url('tool/generate-qrcode') }}"><i class="tiny material-icons">share</i> Rút gọn link</a></li>--}}
                </ul>
            </div>
            <div class="col l3 s12">
