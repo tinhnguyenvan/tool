@@ -6,14 +6,11 @@
 
 namespace TinhPHP\Tool\Http\Controllers;
 
-use App\Http\Controllers\Site\SiteController;
-use TinhPHP\Tool\Models\ToolShortLink;
-
 /**
  * Class FacebookController.
  *
  */
-final class FacebookController extends SiteController
+final class FacebookController extends ToolController
 {
     public function __construct()
     {

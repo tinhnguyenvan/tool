@@ -31,6 +31,9 @@
             display: none !important;
         }
 
+        nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+            height: 34px; line-height: 34px
+        }
     </style>
     <script src="{{ asset("site/js/jquery-3.2.1.min.js") }}" type="text/javascript"></script>
     <script src="{{ asset("site/js/materialize.min.js") }}" type="text/javascript"></script>
@@ -40,9 +43,9 @@
 <body>
 <div class="navbar-fixed">
     <nav class="white" role="navigation">
-        <div class="nav-wrapper container">
+        <div class="nav-wrapper" style="">
             <ul class="hide-on-med-and-down">
-                @foreach(\TinhPHP\Tool\Models\Nav::menuMain() as $item)
+                @foreach($menuMain as $item)
                     <li>
                         <a class="@if($active_menu == $item['active']) active @endif" href="{{ $item['link'] }}">
                             {!! $item['title'] !!}
@@ -52,7 +55,7 @@
             </ul>
 
             <ul id="nav-mobile" class="sidenav">
-                @foreach(\TinhPHP\Tool\Models\Nav::menuMain() as $item)
+                @foreach($menuMain as $item)
                     <li>
                         <a class="@if($active_menu == $item['active']) active @endif" href="{{ $item['link'] }}">
                             {!! $item['title'] !!}
@@ -67,7 +70,7 @@
     </nav>
 </div>
 
-<div class="container">
+<div class="">
     <div class="section">
 
         @yield('content')
@@ -77,35 +80,32 @@
 
 
 <footer class="page-footer teal">
-    <!--
    <div class="container">
        <div class="row">
            <div class="col l6 s12">
-               <h5 class="white-text">Company Bio</h5>
-               <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's
-                   our full time job. Any amount would help support and continue development on this project and is
-                   greatly appreciated.</p>
+               <h5 class="white-text">NGUYỄN VĂN TÌNH</h5>
+               <p class="grey-text text-lighten-4">Công cụ đổi font chữ Facebook online miễn phí với hơn 80 phông ĐẸP, ĐỘC, LẠ. Hãy tạo điểm nhấn trong từng nét chữ với Facebook Text Generator</p>
            </div>
            <div class="col l3 s12">
-               <h5 class="white-text">Settings</h5>
+               <h5 class="white-text">Category</h5>
                <ul>
-                   <li><a class="white-text" href="#!">Link 1</a></li>
-                   <li><a class="white-text" href="#!">Link 2</a></li>
-                   <li><a class="white-text" href="#!">Link 3</a></li>
-                   <li><a class="white-text" href="#!">Link 4</a></li>
+                   <li><a class="white-text" href="{{ base_url('tool/facebook-icon') }}"><i class="tiny material-icons">share</i> Facebook icon</a></li>
+                   <li><a class="white-text" href="{{ base_url('tool/facebook-text') }}"><i class="tiny material-icons">share</i> Facebook font</a></li>
+                   <li><a class="white-text" href="{{ base_url('tool/generate-qrcode') }}"><i class="tiny material-icons">share</i> Qrcode</a></li>
+                   <li><a class="white-text" href="{{ base_url('tool/generate-qrcode') }}"><i class="tiny material-icons">share</i> Rút gọn link</a></li>
                </ul>
            </div>
            <div class="col l3 s12">
-               <h5 class="white-text">Connect</h5>
+               <h5 class="white-text">Link</h5>
                <ul>
-                   <li><a class="white-text" href="#!">Link 1</a></li>
-                   <li><a class="white-text" href="#!">Link 2</a></li>
-                   <li><a class="white-text" href="#!">Link 3</a></li>
-                   <li><a class="white-text" href="#!">Link 4</a></li>
+                   <li><a class="white-text" target="_blank" href="https://tweb.com.vn/collections"><i class="tiny material-icons">share</i> Thiết kế website</a></li>
+                   <li><a class="white-text" target="_blank" href="https://chomienphi.com.vn"><i class="tiny material-icons">share</i> Rao vặt</a></li>
+                   <li><a class="white-text" target="_blank" href="https://chomienphi.vn"><i class="tiny material-icons">share</i> Mã giảm giá</a></li>
+                   <li><a class="white-text" target="_blank" href="https://sanphamtienich.com"><i class="tiny material-icons">share</i> Săn coupon</a></li>
                </ul>
            </div>
        </div>
-   </div>-->
+   </div>
     <div class="footer-copyright">
         <div class="container">
             Made by <a style="color: #ffd655" href="https://tweb.com.vn?utm_content=tool">Tình Nguyễn</a>
@@ -123,6 +123,8 @@
         $('.collapsible').collapsible();
 
         $('.sidenav').sidenav();
+
+        $('.scrollspy').scrollSpy();
     });
 
     /**
