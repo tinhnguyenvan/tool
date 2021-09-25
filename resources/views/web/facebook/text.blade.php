@@ -619,5 +619,5 @@
         </div>
     </div>
 
-    @include('view_tool::web.facebook.text.script')
+    @include('view_tool::web.facebook.assets.script')
 @endsection

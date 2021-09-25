@@ -54,5 +54,5 @@
         </div>
     </div>
 
-    @include('view_tool::web.facebook.text.script_strike')
+    @include('view_tool::web.facebook.assets.script_strike')
 @endsection
