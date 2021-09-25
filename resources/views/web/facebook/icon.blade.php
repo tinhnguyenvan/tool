@@ -1,28 +1,7 @@
 @extends('view_tool::web.layout.default')
 {{--https://unicode.org/Public/emoji/13.0/--}}
 @section('content')
-    <style>
-        .label-emoji {
-            font-size: 30px;
-            padding: 10px;
-        }
-
-        .label-emoji:hover {
-            cursor: pointer;
-        }
-
-        .form-select-icon {
-            position: fixed;
-        }
-
-        .item-emoji {
-            display: inline-block;
-        }
-
-        .collection-fixed {
-            position: fixed;
-        }
-    </style>
+    @include('view_tool::web.facebook.assets.style')
 
     <div class="row list-icon-emoji">
         <div class="col s2">

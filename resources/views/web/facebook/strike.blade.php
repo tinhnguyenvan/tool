@@ -1,33 +1,7 @@
 @extends('view_tool::web.layout.default')
 
 @section('content')
-    <style>
-        .h1-title {
-            font-size: 30px;
-            text-align: center;
-            color: #0a53be;
-        }
-
-        .data-rs-container textarea {
-            position: absolute;
-            left: -999em;
-        }
-
-        .font-line-input-text, .font-line-result-text {
-            display: block;
-            margin-top: 25px;
-            color: #000;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-
-    </style>
+    @include('view_tool::web.facebook.assets.style')
 
     <div class="row">
         <div class="col s2">

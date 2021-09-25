@@ -5,6 +5,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{{ asset("site/css/materialize.min.css") }}" rel="stylesheet" media="screen,projection"/>
     <style>
+        .navbar-fixed {
+            height: 34px;
+        }
         nav ul a,
         nav .brand-logo {
             color: #444;
