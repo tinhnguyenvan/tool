@@ -32,7 +32,7 @@ final class FacebookController extends ToolController
         return view('view_tool::web.facebook.icon', $this->render($data));
     }
 
-    public function text()
+    public function text($type = 'text')
     {
         $data = [
             'active_menu' => 'facebook_text',
@@ -40,6 +40,6 @@ final class FacebookController extends ToolController
             'title' => 'Công cụ Đổi Font Chữ Facebook [kiểu đẹp thay thế YayText]',
             'keywords' => 'text,chữ,văn bản,đặc biệt,unicode,symbol,post,story,status,bài viết,miễn phí,Facebook',
         ];
-        return view('view_tool::web.facebook.text', $this->render($data));
+        return view('view_tool::web.facebook.'.$type, $this->render($data));
     }
 }
