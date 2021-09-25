@@ -29,11 +29,11 @@ class Nav extends Model
 //                'title' => '🪄 Count text',
 //                'active' => 'count_text',
 //            ],
-//            [
-//                'link' => base_url('tool/generate-qrcode'),
-//                'title' => '💡 QR Code',
-//                'active' => 'generate_qrcode',
-//            ],
+            [
+                'link' => base_url('tool/generate-qrcode'),
+                'title' => '💡 QR Code',
+                'active' => 'url',
+            ],
 //            [
 //                'link' => base_url('tool/generate-qrcode'),
 //                'title' => '📎 Rút gọn link',
