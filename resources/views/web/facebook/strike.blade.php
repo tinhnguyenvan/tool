@@ -33,11 +33,13 @@
         <div class="col s2">
             <ul class="section table-of-contents pinned table-of-contents">
                 <li><a href="{{ base_url('tool/facebook-text') }}">80 Fonts ĐẸℙ, ĐỘℂ, 𝕃Ạ</a></li>
-                <li><a class="active" href="{{ base_url('tool/facebook-text/strike') }}">Font chữ <s>gạch ngang</s></a></li>
+                <li><a class="active" href="{{ base_url('tool/facebook-text/strike') }}">Font chữ <s>gạch ngang</s></a>
+                </li>
             </ul>
         </div>
         <div class="col s10">
-            <!-- box font line -->
+            @include('view_tool::web.ads.gg_728_90')
+
             <div id="font-line" class="section scrollspy">
                 <h1 class="h1-title">Tạo chữ <s>gạch ngang</s> trên facebook</h1>
 
@@ -57,16 +59,20 @@
                 <label class="text-center font-line-input-text" for="font-line-input-text">
                     Gõ chữ muốn gạch ngang
                 </label>
-                <textarea id="font-line-input-text" onkeyup="strikeText($(this))" placeholder="Nhập nội dung..." style="height: 70px"></textarea>
+                <textarea id="font-line-input-text" onkeyup="strikeText($(this))" placeholder="Nhập nội dung..."
+                          style="height: 70px"></textarea>
 
                 <label class="text-center font-line-result-text" for="font-line-result-text">
                     Kết quả
                     <s>chữ gạch ngang</s>
                 </label>
-                <textarea id="font-line-result-text" readonly placeholder="Xem kết quả" style="height: 70px; background: #ededed"></textarea>
+                <textarea id="font-line-result-text" readonly placeholder="Xem kết quả"
+                          style="height: 70px; background: #ededed"></textarea>
 
 
-                <button onclick="M.toast({html: 'Đã copy'})" title="Click copy" data-clipboard-target="#font-line-result-text" class="clipboard waves-effect waves-light btn btn-small">
+                <button onclick="M.toast({html: 'Đã copy'})" title="Click copy"
+                        data-clipboard-target="#font-line-result-text"
+                        class="clipboard waves-effect waves-light btn btn-small">
                     <i class="material-icons left">content_copy</i> Sao chép nội dung
                 </button>
 
