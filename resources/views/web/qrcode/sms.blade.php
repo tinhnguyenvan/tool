@@ -33,6 +33,8 @@
                     </div>
                 </div>
             </div>
+
+            @include('view_tool::web.ads.gg_horizontal')
         </div>
     </div>
 @endsection
