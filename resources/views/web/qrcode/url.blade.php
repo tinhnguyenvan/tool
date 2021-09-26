@@ -12,7 +12,7 @@
                             <div class="input-field col s12">
                                 <input id="url" name="url" type="text" minlength="10" required class="characterCounter validate" data-length="255">
                                 <label for="url">Website URL</label>
-                                <span class="helper-text" data-error="Vui lòng nhập link website" data-success="right">
+                                <span class="helper-text" data-error="Vui lòng nhập link website" data-success="OK">
                                     Ex: https://tweb.com.vn
                                 </span>
                             </div>
