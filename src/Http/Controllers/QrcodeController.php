@@ -22,7 +22,7 @@ class QrcodeController extends ToolController
     {
         $data = [
             'active_menu' => 'generate_qrcode',
-            'slug' => $slug,
+            'sub_active_menu' => $slug,
             'keyword' => 'QR Code Generator for URL, vCard, and more. Add logo, colors, frames, and download in high print quality. Get your free QR Codes now!',
             'description' => 'QR Code Generator for URL, vCard, and more. Add logo, colors, frames, and download in high print quality. Get your free QR Codes now!',
             'title' => 'QR Code Generator | Create Your Free QR Codes'

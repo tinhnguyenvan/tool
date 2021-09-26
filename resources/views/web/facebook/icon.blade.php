@@ -4,7 +4,7 @@
     @include('view_tool::web.facebook.assets.style')
 
     <div class="row list-icon-emoji">
-        <div class="col s2">
+        <div class="col s12 l2 hide-on-small-only">
             <ul class="section table-of-contents pinned table-of-contents">
                 <?php
                 $file = @fopen($file_name, "r");
@@ -21,7 +21,7 @@
                 ?>
             </ul>
         </div>
-        <div class="col s10">
+        <div class="col s12 l10">
             @include('view_tool::web.ads.gg_728_90')
 
             <?php

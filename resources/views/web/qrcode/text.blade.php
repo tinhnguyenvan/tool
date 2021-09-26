@@ -3,10 +3,10 @@
 @section('content')
     <div class="row">
         @include('view_tool::web.qrcode.nav')
-        <div class="col s10">
+        <div class="col s12 l10">
             <div id="url" class="section">
                 <div class="row">
-                    <form class="col s12">
+                    <form class="col l8 s12">
                         <div class="row">
                             <div class="input-field col s12">
                                 <textarea id="textarea1" class="materialize-textarea"></textarea>

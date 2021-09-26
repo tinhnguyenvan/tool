@@ -3,10 +3,10 @@
 @section('content')
     <div class="row">
         @include('view_tool::web.qrcode.nav')
-        <div class="col s10">
+        <div class="col s12 l10">
             <div id="url" class="section">
                 <div class="row">
-                    <form class="col s8" method="post" action="{{ base_url('tool/generate-qrcode/url') }}">
+                    <form class="col l8 s12" method="post" action="{{ base_url('tool/generate-qrcode/url') }}">
                         @csrf
                         <div class="row">
                             <div class="input-field col s12">
@@ -23,7 +23,7 @@
                         </button>
                     </form>
 
-                    <div class="col s4">
+                    <div class="col l4 s12">
                         @if(!empty(request('url')))
                             <div class="visible-print text-center">
                                 {!! QrCode::size(250)->generate(request('url')); !!}

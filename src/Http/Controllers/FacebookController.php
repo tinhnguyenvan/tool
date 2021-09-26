@@ -36,6 +36,7 @@ final class FacebookController extends ToolController
     {
         $data = [
             'active_menu' => 'facebook_text',
+            'sub_active_menu' => 'sub_facebook_'.$type,
             'description' => 'Công cụ đổi font chữ Facebook online miễn phí với hơn 80 phông ĐẸP, ĐỘC, LẠ. Hãy tạo điểm nhấn trong từng nét chữ với Facebook Text Generator',
             'title' => 'Công cụ Đổi Font Chữ Facebook [kiểu đẹp thay thế YayText]',
             'keywords' => 'text,chữ,văn bản,đặc biệt,unicode,symbol,post,story,status,bài viết,miễn phí,Facebook',

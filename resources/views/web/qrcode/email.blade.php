@@ -3,10 +3,10 @@
 @section('content')
     <div class="row">
         @include('view_tool::web.qrcode.nav')
-        <div class="col s10">
+        <div class="col s12 l10">
             <div id="url" class="section">
                 <div class="row">
-                    <form class="col s8" method="post" action="{{ base_url('tool/generate-qrcode/email') }}">
+                    <form class="col l8 s12" method="post" action="{{ base_url('tool/generate-qrcode/email') }}">
                         @csrf
                         <div class="row">
                             <div class="input-field col s12">
@@ -17,13 +17,13 @@
                             </div>
 
                             <div class="input-field col s12">
-                                <input id="title" name="title" type="text" value="{{ old('title') }}" minlength="3" placeholder="" required class="characterCounter validate" data-length="255">
+                                <input id="title" name="title" type="text" value="{{ old('title') }}" minlength="3" placeholder="Nhập tiêu đề" required class="characterCounter validate" data-length="255">
                                 <label for="title">Tiêu đề email</label>
                                 <span class="helper-text" data-error="Vui lòng nhập tiêu đề" data-success="OK"></span>
                             </div>
 
                             <div class="input-field col s12">
-                                <textarea id="content" type="text" name="content" placeholder="" minlength="3" required class="characterCounter materialize-textarea validate"
+                                <textarea id="content" type="text" name="content" placeholder="Nhập nội dung" minlength="3" required class="characterCounter materialize-textarea validate"
                                           data-length="255">{{ old('content') }}</textarea>
                                 <label for="content">Nội dung</label>
                                 <span class="helper-text" data-error="Vui lòng nhập nội dung" data-success="OK"></span>
@@ -35,7 +35,7 @@
                         </button>
                     </form>
 
-                    <div class="col s4">
+                    <div class="col l4 s12">
                         @if(!empty(request('email')))
                             <div class="visible-print text-center">
                                 {!! QrCode::size(250)->email(request('email'), request('title'), request('content')); !!}
