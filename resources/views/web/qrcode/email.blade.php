@@ -44,6 +44,9 @@
                     </div>
                 </div>
             </div>
+
+
+            @include('view_tool::web.ads.gg_728_90')
         </div>
     </div>
 
