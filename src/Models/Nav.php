@@ -39,6 +39,11 @@ class Nav extends Model
 //                'title' => '📎 Rút gọn link',
 //                'active' => 'generate_qrcode',
 //            ],
+            [
+                'link' => 'https://khuyenmai.tweb.com.vn?utm_source=tool.tweb.com.vn',
+                'title' => '🔖 Săn Coupon',
+                'active' => '',
+            ],
         ];
     }
 }

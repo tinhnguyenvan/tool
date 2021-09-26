@@ -31,6 +31,8 @@
                             </div>
                         @endif
                     </div>
+
+                    <img src="{!! QrCode::format('png')->generate('Embed me into an e-mail!')!!}">
                 </div>
             </div>
 
