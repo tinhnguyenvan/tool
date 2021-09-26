@@ -83,8 +83,10 @@
     <nav class="white" role="navigation">
         <div class="nav-wrapper" style="">
             <a href="{{ base_url('tool') }}"
-               class="show-on-small brand-logo hide-on-med-only hide-on-med-and-down hide-on-med-and-up hide-on-large-only">Simple
-                Tool</a>
+               style="font-size: 15px; font-style: italic"
+               class="show-on-small brand-logo hide-on-med-only hide-on-med-and-down hide-on-med-and-up hide-on-large-only">
+                Simple Tool
+            </a>
             <ul class="hide-on-med-and-down">
                 @foreach($menuMain as $item)
                     <li>

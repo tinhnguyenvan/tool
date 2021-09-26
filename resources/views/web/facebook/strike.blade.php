@@ -12,7 +12,7 @@
             </ul>
         </div>
         <div class="col s12 l10">
-            @include('view_tool::web.ads.gg_728_90')
+            @include('view_tool::web.ads.gg_horizontal')
 
             <div id="font-line" class="section scrollspy">
                 <h1 class="h1-title">Tạo chữ <s>gạch ngang</s> trên facebook</h1>

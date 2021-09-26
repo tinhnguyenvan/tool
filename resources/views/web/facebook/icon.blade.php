@@ -22,7 +22,7 @@
             </ul>
         </div>
         <div class="col s12 l10">
-            @include('view_tool::web.ads.gg_728_90')
+            @include('view_tool::web.ads.gg_horizontal')
 
             <?php
             $file = @fopen($file_name, "r");
