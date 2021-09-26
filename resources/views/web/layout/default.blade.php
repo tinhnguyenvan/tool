@@ -37,6 +37,34 @@
         nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
             height: 34px; line-height: 34px
         }
+
+        /* label color */
+        .input-field label {
+            color: #000;
+        }
+        /* label focus color */
+        .input-field input[type=text]:focus + label {
+            color: #000;
+        }
+        /* label underline focus color */
+        .input-field input[type=text]:focus {
+            border-bottom: 1px solid #000;
+            box-shadow: 0 1px 0 0 #000;
+        }
+        /* valid color */
+        .input-field input[type=text].valid {
+            border-bottom: 1px solid #000;
+            box-shadow: 0 1px 0 0 #000;
+        }
+        /* invalid color */
+        .input-field input[type=text].invalid {
+            border-bottom: 1px solid #000;
+            box-shadow: 0 1px 0 0 #000;
+        }
+        /* icon prefix focus color */
+        .input-field .prefix.active {
+            color: #000;
+        }
     </style>
     <script src="{{ asset("site/js/jquery-3.2.1.min.js") }}" type="text/javascript"></script>
     <script src="{{ asset("site/js/materialize.min.js") }}" type="text/javascript"></script>
@@ -128,6 +156,8 @@
         $('.sidenav').sidenav();
 
         $('.scrollspy').scrollSpy();
+
+        $('.characterCounter').characterCounter();
     });
 
     /**
