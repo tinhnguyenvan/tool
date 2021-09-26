@@ -32,7 +32,7 @@ class Nav extends Model
             [
                 'link' => base_url('tool/generate-qrcode'),
                 'title' => '💡 QR Code',
-                'active' => 'url',
+                'active' => 'generate_qrcode',
             ],
 //            [
 //                'link' => base_url('tool/generate-qrcode'),
