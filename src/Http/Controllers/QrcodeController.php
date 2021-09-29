@@ -7,11 +7,9 @@
 namespace TinhPHP\Tool\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 /**
  * Class QrcodeController.
@@ -44,20 +42,30 @@ class QrcodeController extends ToolController
 
     public function download(Request $request, $slug)
     {
-        $path = storage_path('app/public/upload/tool_');
-        $isDownload = 0;
-        $fileName = '';
-
         switch ($slug) {
             case 'url':
-                $fileName = md5($request->get('url')).'.png';
-                QrCode::format('png')->generate($request->get('url'), $path.$fileName);
+                $fileName = 'url-'.Str::slug($request->get('url')).'.png';
+                $content = QrCode::format('png')->size(500)->generate($request->get('url'));
+
                 $isDownload = 1;
+                break;
+            case 'email':
+                $fileName = 'email-'.Str::slug($request->get('email')).'.png';
+                $content = QrCode::format('png')->size(500)->email($request->get('email'), $request->get('title'));
+
+                $isDownload = 1;
+                break;
+            default:
+                $isDownload = 0;
+                $fileName = '';
+                $content = '';
                 break;
         }
 
         if ($isDownload) {
-            return response()->download($path.$fileName);
+            $fileName = 'tmp/'.date('Y/m/d/').$fileName;
+            Storage::disk('public')->put($fileName, $content);
+            return response()->download(Storage::disk('public')->path($fileName));
         }
 
         return redirect(base_url('tool/generate-qrcode'));
