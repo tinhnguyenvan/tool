@@ -1,4 +1,4 @@
-<div class="ads" style="margin: 10px; text-align: center">
+<div class="ads" style="margin: 30px; text-align: center">
     @if(config('app.env') == 'production')
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2133388326821128"
                 crossorigin="anonymous"></script>
