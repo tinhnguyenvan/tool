@@ -42,18 +42,24 @@ class QrcodeController extends ToolController
 
     public function download(Request $request, $slug)
     {
+        $isDownload = 1;
         switch ($slug) {
             case 'url':
                 $fileName = 'url-'.Str::slug($request->get('url')).'.png';
                 $content = QrCode::format('png')->size(500)->generate($request->get('url'));
 
-                $isDownload = 1;
                 break;
             case 'email':
                 $fileName = 'email-'.Str::slug($request->get('email')).'.png';
-                $content = QrCode::format('png')->size(500)->email($request->get('email'), $request->get('title'));
-
-                $isDownload = 1;
+                $content = QrCode::format('png')->size(500)->email(
+                    $request->get('email'),
+                    $request->get('title'),
+                    $request->get('content')
+                );
+                break;
+            case 'sms':
+                $fileName = 'sms-'.Str::slug($request->get('sms')).'.png';
+                $content = QrCode::format('png')->size(500)->SMS($request->get('sms'));
                 break;
             default:
                 $isDownload = 0;
