@@ -10,9 +10,11 @@
                 <li>
                     <a class="active" href="{{ base_url('tool/facebook-text/strike') }}">Font chữ <s>gạch ngang</s></a>
                 </li>
-            </ul>
 
-            @include('view_tool::web.ads.gg_vertical')
+                <li>
+                    @include('view_tool::web.ads.gg_vertical')
+                </li>
+            </ul>
         </div>
         <div class="col s12 l10">
             @include('view_tool::web.ads.gg_horizontal')
