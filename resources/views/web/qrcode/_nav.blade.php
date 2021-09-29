@@ -6,5 +6,7 @@
         <li><a @if($sub_active_menu == 'text') class="active" @endif href="{{ base_url('tool/generate-qrcode/text') }}">Text</a></li>
         <li><a @if($sub_active_menu == 'sms') class="active" @endif href="{{ base_url('tool/generate-qrcode/sms') }}">SMS</a></li>
     </ul>
+
+    @include('view_tool::web.ads.gg_vertical')
 </div>
 

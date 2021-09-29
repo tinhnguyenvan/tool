@@ -7,9 +7,12 @@
         <div class="col s12 l2 hide-on-small-only">
             <ul class="section table-of-contents pinned table-of-contents">
                 <li><a href="{{ base_url('tool/facebook-text') }}">80 Fonts ĐẸℙ, ĐỘℂ, 𝕃Ạ</a></li>
-                <li><a class="active" href="{{ base_url('tool/facebook-text/strike') }}">Font chữ <s>gạch ngang</s></a>
+                <li>
+                    <a class="active" href="{{ base_url('tool/facebook-text/strike') }}">Font chữ <s>gạch ngang</s></a>
                 </li>
             </ul>
+
+            @include('view_tool::web.ads.gg_vertical')
         </div>
         <div class="col s12 l10">
             @include('view_tool::web.ads.gg_horizontal')

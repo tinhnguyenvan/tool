@@ -20,6 +20,8 @@
                 }
                 ?>
             </ul>
+
+            @include('view_tool::web.ads.gg_vertical')
         </div>
         <div class="col s12 l10">
             @include('view_tool::web.ads.gg_horizontal')
