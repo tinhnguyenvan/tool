@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        @include('view_tool::web.qrcode.nav')
+        @include('view_tool::web.qrcode._nav')
         <div class="col s12 l10">
             <div id="url" class="section">
                 <div class="row">
@@ -26,9 +26,11 @@
 
                     <div class="col l4 s12">
                         @if(!empty(request('sms')))
-                            <div class="visible-print text-center">
+                            <div class="center">
                                 {!! QrCode::size(250)->SMS(request('sms')); !!}
                             </div>
+
+                            @include('view_tool::web.qrcode._download')
                         @endif
                     </div>
                 </div>

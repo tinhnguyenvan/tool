@@ -3,7 +3,6 @@
 
 namespace TinhPHP\Tool\Http\Controllers\Admin;
 
-use App\Models\Media;
 use TinhPHP\Tool\Models\ToolShortLink;
 use App\Services\MediaService;
 use TinhPHP\Tool\Services\ToolService;
@@ -32,38 +31,7 @@ class ToolController extends AdminToolController
 
     public function index()
     {
-        return redirect(admin_url('tools/qr_code'));
-    }
-
-    public function qrCode(Request $request)
-    {
-        $file = null;
-        if (!empty($request->get('file_id'))) {
-            $file = Media::query()->where('id', $request->get('file_id'))->first();
-        }
-        $data = [
-            'file' => $file,
-            'tabs' => $this->toolService->tabs(),
-            'tabActive' => $request->get('tab') ?? 'url',
-            'title' => trans('lang_tool::tool.create_qr_code')
-        ];
-        return view('view_tool::admin.qr_code.index', $this->render($data));
-    }
-
-    public function handleQrCode(Request $request)
-    {
-        $params = $request->all();
-        $fileId = 0;
-        if (!empty($params['_token'])) {
-            $file = $this->toolService->createQrCode($params);
-            if (!empty($file)) {
-                $fileId = $file->id;
-            }
-            $request->session()->flash('success', trans('tool.success_create_qr_code'));
-        } else {
-            $request->session()->flash('error', trans('tool.error_create_qr_code'));
-        }
-        return redirect(admin_url('tools/qr_code?file_id=' . $fileId), 302);
+        return redirect(admin_url('tools/short_link'));
     }
 
     public function shortLink(Request $request)
@@ -78,7 +46,7 @@ class ToolController extends AdminToolController
         return view('view_tool::admin.short_link.list', $this->render($data));
     }
 
-    public function createShortLink(Request $request)
+    public function createShortLink()
     {
         $data = [
             'short_url' => $this->toolShortLinkService->generateShortUrl(),

@@ -9,6 +9,7 @@ Route::get('sl/{short_link}', [ShortLinkController::class, 'index']);
 
 Route::get('tool/generate-qrcode/{slug}', [QrcodeController::class, 'index']);
 Route::get('tool/generate-qrcode', [QrcodeController::class, 'index']);
+Route::post('tool/generate-qrcode/download/{slug}', [QrcodeController::class, 'download']);
 Route::post('tool/generate-qrcode/{slug}', [QrcodeController::class, 'index']);
 
 Route::get('tool/facebook-icon', [FacebookController::class, 'icon']);

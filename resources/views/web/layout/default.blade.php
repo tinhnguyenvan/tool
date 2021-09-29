@@ -80,7 +80,7 @@
 
 <body>
 <div class="navbar-fixed">
-    <nav class="white" role="navigation">
+    <nav class="teal" role="navigation">
         <div class="nav-wrapper" style="">
             <a href="{{ base_url('tool') }}"
                style="font-size: 15px; font-style: italic"
@@ -90,7 +90,7 @@
             <ul class="hide-on-med-and-down">
                 @foreach($menuMain as $item)
                     <li>
-                        <a class="@if($active_menu == $item['active']) active @endif" href="{{ $item['link'] }}">
+                        <a class="white-text @if($active_menu == $item['active']) active @endif" href="{{ $item['link'] }}">
                             {!! $item['title'] !!}
                         </a>
                     </li>
