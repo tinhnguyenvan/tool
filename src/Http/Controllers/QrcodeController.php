@@ -47,8 +47,8 @@ class QrcodeController extends ToolController
             case 'url':
                 $fileName = $slug.'-'.Str::slug($request->get('url')).'.png';
                 $content = QrCode::format('png')->size(500)->generate($request->get('url'));
-
                 break;
+
             case 'email':
                 $fileName = $slug.'-'.Str::slug($request->get('email')).'.png';
                 $content = QrCode::format('png')->size(500)->email(
@@ -57,6 +57,7 @@ class QrcodeController extends ToolController
                     $request->get('content')
                 );
                 break;
+
             case 'sms':
                 $fileName = $slug.'-'.Str::slug($request->get('sms')).'.png';
                 $content = QrCode::format('png')->size(500)->SMS($request->get('sms'));
@@ -66,6 +67,7 @@ class QrcodeController extends ToolController
                 $fileName = $slug.'-'.Str::slug(Str::limit($request->get('content'), 50)).'.png';
                 $content = QrCode::format('png')->size(500)->generate($request->get('content'));
                 break;
+
             default:
                 $isDownload = 0;
                 $fileName = '';
