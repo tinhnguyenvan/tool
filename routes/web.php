@@ -15,3 +15,5 @@ Route::post('tool/generate-qrcode/{slug}', [QrcodeController::class, 'index']);
 Route::get('tool/facebook-icon', [FacebookController::class, 'icon']);
 Route::get('tool/facebook-text/{slug}', [FacebookController::class, 'text']);
 Route::get('tool/facebook-text', [FacebookController::class, 'text']);
+Route::get('tool/facebook-avatar', [FacebookController::class, 'avatar']);
+Route::post('tool/facebook-avatar', [FacebookController::class, 'postAvatar']);

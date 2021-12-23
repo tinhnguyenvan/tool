@@ -73,6 +73,12 @@ class Nav extends Model
                 'title' => '🔖 Săn Coupon',
                 'active' => '',
             ],
+
+            [
+                'link' => base_url('tool/facebook-avatar'),
+                'title' => '🪄 Tạo ảnh facebook tích xanh',
+                'active' => 'facebook_avatar',
+            ],
         ];
     }
 }

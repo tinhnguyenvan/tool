@@ -22,7 +22,7 @@
             <div id="font-line" class="section scrollspy">
                 <h1 class="h1-title">Tạo chữ <s>gạch ngang</s> trên facebook</h1>
 
-                <blockquote class="teal lighten-5">
+                <blockquote class="teal lighten-5" style="padding: 10px">
                     <p>
                         <strong>Bước 1</strong>: Bạn gõ chữ muốn tạo gạch ngang vào ô thư nhất. Code sẽ tự sinh ra chữ
                         gạch ngang

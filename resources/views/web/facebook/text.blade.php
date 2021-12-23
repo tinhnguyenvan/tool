@@ -22,7 +22,7 @@
                     <strong>ĐỘC</strong>,
                     <strong>LẠ</strong>
                 </h1>
-                <blockquote class="teal lighten-5">
+                <blockquote class="teal lighten-5" style="padding: 10px">
                     <p>
                         Hãy nhập văn bản mà bạn muốn chuyển đổi font vào ô bên dưới sau đó sao chép và dán chúng vào
                         Facebook.

@@ -80,7 +80,7 @@
 
 <body>
 <div class="navbar-fixed">
-    <nav class="teal" role="navigation">
+    <nav class="white" role="navigation">
         <div class="nav-wrapper" style="">
             <a href="{{ base_url('tool') }}"
                style="font-size: 15px; font-style: italic"
@@ -90,7 +90,8 @@
             <ul class="hide-on-med-and-down">
                 @foreach($menuMain as $item)
                     <li>
-                        <a class="white-text @if($active_menu == $item['active']) active @endif" href="{{ $item['link'] }}">
+                        <a class=" @if($active_menu == $item['active']) active @endif"
+                           href="{{ $item['link'] }}">
                             {!! $item['title'] !!}
                         </a>
                     </li>
@@ -108,7 +109,8 @@
                             <ul>
                                 @foreach($item['child'] as $child)
                                     <li>
-                                        <a style="text-indent: 20px" class="@if(!empty($sub_active_menu) && $sub_active_menu == $child['active']) blue-text text-darken-2 @endif"
+                                        <a style="text-indent: 20px"
+                                           class="@if(!empty($sub_active_menu) && $sub_active_menu == $child['active']) blue-text text-darken-2 @endif"
                                            href="{{ $child['link'] }}">
                                             - {!! $child['title'] !!}
                                         </a>
@@ -145,26 +147,56 @@
             <div class="col l3 s12">
                 <h5 class="white-text">Category</h5>
                 <ul>
-                    <li><a class="white-text" href="{{ base_url('tool/facebook-icon') }}"><i
-                                class="tiny material-icons">share</i> Facebook Icon</a></li>
-                    <li><a class="white-text" href="{{ base_url('tool/facebook-text') }}"><i
-                                class="tiny material-icons">share</i> Facebook Font</a></li>
-                    <li><a class="white-text" href="{{ base_url('tool/generate-qrcode') }}"><i
-                                class="tiny material-icons">share</i> Qr Code</a></li>
+                    <li>
+                        <a class="white-text" href="{{ base_url('tool/facebook-icon') }}">
+                            <i class="tiny material-icons">share</i> Facebook Icon
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="white-text" href="{{ base_url('tool/facebook-text') }}">
+                            <i class="tiny material-icons">share</i> Facebook Font
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="white-text" href="{{ base_url('tool/facebook-avatar') }}">
+                            <i class="tiny material-icons">share</i> Facebook tích xanh
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="white-text" href="{{ base_url('tool/generate-qrcode') }}">
+                            <i class="tiny material-icons">share</i> Qr Code
+                        </a>
+                    </li>
+
                     {{--                   <li><a class="white-text" href="{{ base_url('tool/generate-qrcode') }}"><i class="tiny material-icons">share</i> Rút gọn link</a></li>--}}
                 </ul>
             </div>
             <div class="col l3 s12">
                 <h5 class="white-text">Link</h5>
                 <ul>
-                    <li><a class="white-text" target="_blank" href="https://tweb.com.vn/collections"><i
-                                class="tiny material-icons">share</i> Thiết kế website</a></li>
-                    <li><a class="white-text" target="_blank" href="https://chomienphi.com.vn"><i
-                                class="tiny material-icons">share</i> Rao vặt</a></li>
-                    <li><a class="white-text" target="_blank" href="https://chomienphi.vn"><i
-                                class="tiny material-icons">share</i> Mã giảm giá</a></li>
-                    <li><a class="white-text" target="_blank" href="https://sanphamtienich.com"><i
-                                class="tiny material-icons">share</i> Săn coupon</a></li>
+                    <li>
+                        <a class="white-text" target="_blank" href="https://tweb.com.vn/collections?ref=tool_tweb">
+                            <i class="tiny material-icons">share</i> Thiết kế website
+                        </a>
+                    </li>
+                    <li>
+                        <a class="white-text" target="_blank" href="https://chomienphi.com.vn?ref=tool_tweb">
+                            <i class="tiny material-icons">share</i> Rao vặt
+                        </a>
+                    </li>
+                    <li>
+                        <a class="white-text" target="_blank" href="https://chomienphi.vn?ref=tool_tweb">
+                            <i class="tiny material-icons">share</i> Mã giảm giá
+                        </a>
+                    </li>
+                    <li>
+                        <a class="white-text" target="_blank" href="https://sanphamtienich.com?ref=tool_tweb">
+                            <i class="tiny material-icons">share</i> Săn coupon
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

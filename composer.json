@@ -8,7 +8,8 @@
         }
     ],
     "require": {
-        "simplesoftwareio/simple-qrcode": "~2"
+        "simplesoftwareio/simple-qrcode": "~2",
+        "intervention/image": "^2.5"
     },
     "autoload": {
         "psr-4": {

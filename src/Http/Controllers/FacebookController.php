@@ -6,6 +6,8 @@
 
 namespace TinhPHP\Tool\Http\Controllers;
 
+use Intervention\Image\ImageManagerStatic as Image;
+
 /**
  * Class FacebookController.
  *
@@ -36,11 +38,35 @@ final class FacebookController extends ToolController
     {
         $data = [
             'active_menu' => 'facebook_text',
-            'sub_active_menu' => 'sub_facebook_'.$type,
+            'sub_active_menu' => 'sub_facebook_' . $type,
             'description' => 'Công cụ đổi font chữ Facebook online miễn phí với hơn 80 phông ĐẸP, ĐỘC, LẠ. Hãy tạo điểm nhấn trong từng nét chữ với Facebook Text Generator',
             'title' => 'Công cụ Đổi Font Chữ Facebook [kiểu đẹp thay thế YayText]',
             'keywords' => 'text,chữ,văn bản,đặc biệt,unicode,symbol,post,story,status,bài viết,miễn phí,Facebook',
         ];
-        return view('view_tool::web.facebook.'.$type, $this->render($data));
+        return view('view_tool::web.facebook.' . $type, $this->render($data));
+    }
+
+    public function avatar()
+    {
+        $data = [
+            'active_menu' => 'facebook_avatar',
+        ];
+        return view('view_tool::web.facebook.avatar', $this->render($data));
+    }
+
+    public function postAvatar()
+    {
+        // open an image file
+        $img = Image::make(public_path('00-1.jpg'));
+
+        // resize image instance
+        $img->resize(500, 500);
+
+        // insert a watermark
+        $img->insert(public_path('site/img/iframe-tich-xanh-copy.png'), 'center');
+
+        // save image in desired format
+        $img->save(public_path('ok-img.png'))->mime();
+
     }
 }
