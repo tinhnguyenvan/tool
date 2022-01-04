@@ -15,7 +15,7 @@
 
         </div>
         <div class="col s12 l10">
-            @include('view_tool::web.ads.gg_horizontal')
+            {{--@include('view_tool::web.ads.gg_horizontal')--}}
             <!-- box 80 font -->
             <div id="font-80" class="section scrollspy">
                 <h1 class="h1-title">Facebook Text Đổi Font Chữ Facebook mới: Tất cả phông <strong>ĐẸP</strong>,

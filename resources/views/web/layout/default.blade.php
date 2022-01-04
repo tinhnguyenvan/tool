@@ -159,11 +159,11 @@
                         </a>
                     </li>
 
-                    <li>
-                        <a class="white-text" href="{{ base_url('tool/facebook-avatar') }}">
-                            <i class="tiny material-icons">share</i> Facebook tích xanh
-                        </a>
-                    </li>
+                    {{--<li>--}}
+                        {{--<a class="white-text" href="{{ base_url('tool/facebook-avatar') }}">--}}
+                            {{--<i class="tiny material-icons">share</i> Facebook tích xanh--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
 
                     <li>
                         <a class="white-text" href="{{ base_url('tool/generate-qrcode') }}">
