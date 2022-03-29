@@ -14,10 +14,8 @@
 <div class="navbar-fixed">
     <nav class="white" role="navigation">
         <div class="nav-wrapper">
-            <a href="{{ base_url('tool') }}"
-               style="font-size: 15px; font-style: italic"
-               class="show-on-small brand-logo hide-on-med-only hide-on-med-and-down hide-on-med-and-up hide-on-large-only">
-                Simple Tool
+            <a href="{{ base_url('tool') }}" class="show-on-small text-primary brand-logo hide-on-med-only hide-on-med-and-down hide-on-med-and-up hide-on-large-only">
+                TWEB
             </a>
             <ul class="hide-on-med-and-down">
                 <li>
