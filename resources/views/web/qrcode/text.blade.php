@@ -1,9 +1,8 @@
 @extends('view_tool::web.layout.default')
 
 @section('content')
-    <div class="row">
-        @include('view_tool::web.qrcode._nav')
-        <div class="col s12 l10">
+    <div class="row container">
+        <div class="col s12 l12">
             <div id="url" class="section">
                 <div class="row">
                     <form class="col l8 s12" method="post" action="{{ base_url('tool/generate-qrcode/text') }}">
@@ -29,6 +28,8 @@
                                 {!! QrCode::size(250)->generate(request('content')); !!}
                             </div>
                             @include('view_tool::web.qrcode._download')
+                        @else
+                            @include('view_tool::web.qrcode._demo')
                         @endif
                     </div>
                 </div>

@@ -10,11 +10,6 @@ class Nav extends Model
     {
         return [
             [
-                'link' => base_url(),
-                'title' => '<i class="material-icons">home</i> Home',
-                'active' => '',
-            ],
-            [
                 'link' => base_url('tool/facebook-icon'),
                 'title' => ' 🔎 Facebook Icon',
                 'active' => 'facebook_icon',
@@ -57,6 +52,11 @@ class Nav extends Model
                         'active' => 'email',
                     ],
                     [
+                        'link' => base_url('tool/generate-qrcode/text'),
+                        'title' => 'Text',
+                        'active' => 'text',
+                    ],
+                    [
                         'link' => base_url('tool/generate-qrcode/sms'),
                         'title' => 'SMS',
                         'active' => 'sms',
@@ -68,14 +68,14 @@ class Nav extends Model
 //                'title' => '📎 Rút gọn link',
 //                'active' => 'generate_qrcode',
 //            ],
-            [
-                'link' => 'https://khuyenmai.tweb.com.vn?utm_source=tool.tweb.com.vn',
-                'title' => '🔖 Săn Coupon',
-                'active' => '',
-            ],
+//            [
+//                'link' => 'https://khuyenmai.tweb.com.vn?utm_source=tool.tweb.com.vn',
+//                'title' => '🔖 Săn Coupon',
+//                'active' => '',
+//            ],
             [
                 'link' => 'https://tweb.com.vn/sl/6539fd6',
-                'title' => 'Thiết Kế Landing Page ',
+                'title' => '🔖 Thiết Kế Landing Page ',
                 'active' => '',
             ],
 

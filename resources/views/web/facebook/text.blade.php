@@ -1,22 +1,10 @@
 @extends('view_tool::web.layout.default')
 
 @section('content')
-    @include('view_tool::web.facebook.assets.style')
 
-    <div class="row">
-        <div class="col s12 l2 hide-on-small-only">
-            <ul class="section table-of-contents pinned table-of-contents">
-                <li><a class="active" href="{{ base_url('tool/facebook-text') }}">80 Fonts ĐẸℙ, ĐỘℂ, 𝕃Ạ</a></li>
-                <li><a href="{{ base_url('tool/facebook-text/strike') }}">Font chữ <s>gạch ngang</s></a></li>
-                <li>
-                    @include('view_tool::web.ads.gg_vertical')
-                </li>
-            </ul>
 
-        </div>
-        <div class="col s12 l10">
-            {{--@include('view_tool::web.ads.gg_horizontal')--}}
-            <!-- box 80 font -->
+    <div class=" container">
+        <div class="">
             <div id="font-80" class="section scrollspy">
                 <h1 class="h1-title">Facebook Text Đổi Font Chữ Facebook mới: Tất cả phông <strong>ĐẸP</strong>,
                     <strong>ĐỘC</strong>,

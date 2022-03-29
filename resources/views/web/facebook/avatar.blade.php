@@ -1,8 +1,6 @@
 @extends('view_tool::web.layout.default')
 
 @section('content')
-    @include('view_tool::web.facebook.assets.style')
-
     <div class="row">
         <div class="col s12 l2 hide-on-small-only">
             <ul class="section table-of-contents pinned table-of-contents">

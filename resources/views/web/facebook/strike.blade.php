@@ -1,22 +1,8 @@
 @extends('view_tool::web.layout.default')
 
 @section('content')
-    @include('view_tool::web.facebook.assets.style')
-
-    <div class="row">
-        <div class="col s12 l2 hide-on-small-only">
-            <ul class="section table-of-contents pinned table-of-contents">
-                <li><a href="{{ base_url('tool/facebook-text') }}">80 Fonts ĐẸℙ, ĐỘℂ, 𝕃Ạ</a></li>
-                <li>
-                    <a class="active" href="{{ base_url('tool/facebook-text/strike') }}">Font chữ <s>gạch ngang</s></a>
-                </li>
-
-                <li>
-                    @include('view_tool::web.ads.gg_vertical')
-                </li>
-            </ul>
-        </div>
-        <div class="col s12 l10">
+    <div class="row container">
+        <div class="col s12 l12">
             @include('view_tool::web.ads.gg_horizontal')
 
             <div id="font-line" class="section scrollspy">
