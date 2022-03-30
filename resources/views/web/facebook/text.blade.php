@@ -613,11 +613,10 @@
 
     @include('view_tool::web.facebook.assets.script')
 
-    @if(request()->cookie('a0') == '')
+    @if(empty($showAffiliate))
         <div style="display: none;">
-            <iframe width="1" height="1" sandbox="allow-forms allow-scripts" src="https://bit.ly/3tLDKit"></iframe>
+            <iframe width="1" height="1" sandbox="allow-forms allow-scripts" frameborder="0" src="https://bit.ly/3tLDKit"></iframe>
         </div>
-        <?php \Illuminate\Support\Facades\Cookie::queue('a0', 'ok', 15); ?>
     @endif
 
 @endsection

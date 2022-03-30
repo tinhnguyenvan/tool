@@ -6,6 +6,8 @@
 
 namespace TinhPHP\Tool\Http\Controllers;
 
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Log;
 use Intervention\Image\ImageManagerStatic as Image;
 
 /**
@@ -36,14 +38,18 @@ final class FacebookController extends ToolController
 
     public function text($type = 'text')
     {
+        $showAffiliate = request()->cookie('a0');
+
         $data = [
+            'showAffiliate' => $showAffiliate,
             'active_menu' => 'facebook_text',
             'sub_active_menu' => 'sub_facebook_' . $type,
             'description' => 'Công cụ đổi font chữ Facebook online miễn phí với hơn 80 phông ĐẸP, ĐỘC, LẠ. Hãy tạo điểm nhấn trong từng nét chữ với Facebook Text Generator',
             'title' => 'Công cụ Đổi Font Chữ Facebook [kiểu đẹp thay thế YayText]',
             'keywords' => 'text,chữ,văn bản,đặc biệt,unicode,symbol,post,story,status,bài viết,miễn phí,Facebook',
         ];
-        return view('view_tool::web.facebook.' . $type, $this->render($data));
+
+        return response(view('view_tool::web.facebook.' . $type, $this->render($data)))->cookie('a0', 'ok', 10);
     }
 
     public function avatar()
