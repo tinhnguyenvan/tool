@@ -32,7 +32,8 @@
                         <label class="text-center font-line-result-text" for="font-line-result-text">
                             Chọn hình ảnh
                         </label>
-                        <input class="form-control" type="file" accept="image/png, image/jpeg, image/jpg" name="avatar">
+                        <input class="form-control" type="file" accept="image/png, image/jpeg, image/jpg"
+                               name="avatar">
                     </div>
 
                     <hr/>
@@ -53,6 +54,6 @@
                 </div>
             </form>
         </div>
-    </div
+    </div>
 
 @endsection

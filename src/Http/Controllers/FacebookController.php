@@ -100,8 +100,8 @@ final class FacebookController extends ToolController
 
         $data = [
             'keyword' => 'Tạo ảnh đại diện Facebook, Tạo ảnh online , Tạo avatar , Facebook tích xanh, Tạo avatar tích xanh',
-            'description' => 'Tổng hợp full bộ icon facebook đầy đủ nhất, mới nhất với nhiều trạng thái khác nhau, công cụ viết status facebook kèm icon tiện lợi nhất chỉ cần click vào biểu tượng cảm xúc facebook và chọn nhiều icon facebook khác nhau',
-            'title' => 'Tạo ảnh đại diện Facebook có dấu tích xanh',
+            'description' => 'Tích xanh Facebook là dấu xác nhận chính chủ của Facebook cung cấp cho các fanpage hoặc các tài cá nhân. Chỉ 2 bước đơn giản: Bước 1: Upload ảnh - Bước 2: Download ảnh về',
+            'title' => '🪄 Tạo ảnh đại diện Facebook có dấu tích xanh',
             'active_menu' => 'facebook_avatar',
             'avatar' => $avatar,
             'errors' => $errors
