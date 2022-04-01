@@ -3,18 +3,18 @@
 @section('content')
     <div class="row container">
         <div class="col s12 l12">
-            <form class="col l12 s12" method="post" enctype="multipart/form-data"
-                  action="{{ base_url('tool/facebook-avatar') }}">
+            @include('view_tool::web.ads.gg_horizontal')
+            <form class="col l12 s12" method="post" enctype="multipart/form-data" action="{{ base_url('tool/facebook-avatar') }}">
                 @csrf
                 <div id="font-line" class="section scrollspy">
                     <h1 class="h1-title">🪄 Tạo ảnh facebook tích xanh</h1>
 
                     <blockquote class="teal lighten-5" style="padding: 10px">
-                        Hướng dẫn: <br/>
-                        - Nhấn nút chọn ảnh bạn cần làm avatar tích xanh. <br/>
-                        - Nhấn nút Tạo ảnh <br/>
-                        - Nhấn nút Tải ảnh về hoặc giữ vào ảnh 3 giây để lưu ảnh. <br/>
-                        - Đặt ảnh vừa tải làm ảnh đại diện facebook của bạn. <br/>
+                        <strong>Hướng dẫn: Tạo ảnh facebook tích xanh</strong><br/>
+                        - 1. Nhấn nút chọn ảnh bạn cần làm avatar tích xanh. <br/>
+                        - 2. Nhấn nút Tạo ảnh <br/>
+                        - 3. Nhấn nút Tải ảnh về. <br/>
+                        - 4. Đặt ảnh vừa tải làm ảnh đại diện facebook của bạn. <br/>
                     </blockquote>
 
                     @if(!empty($avatar))
