@@ -3,7 +3,7 @@
 @section('content')
     <div class="row container">
         <div class="col s12 l12">
-            @include('view_tool::web.ads.gg_horizontal')
+
             <form class="col l12 s12" method="post" enctype="multipart/form-data" action="{{ base_url('tool/facebook-avatar') }}">
                 @csrf
                 <div id="font-line" class="section scrollspy">
@@ -53,6 +53,9 @@
                     @endif
                 </div>
             </form>
+
+            @include('view_tool::web.ads.gg_horizontal')
+
         </div>
     </div>
 
