@@ -17,6 +17,7 @@ class ToolController extends SiteController
     public function __construct()
     {
         parent::__construct();
+        $this->middleware(['auth']);
 
         $this->data['menuMain'] = Nav::menuMain();
     }

@@ -77,7 +77,7 @@ class ToolServiceProvider extends ServiceProvider
         );
     }
 
-    protected function routeConfiguration()
+    protected function routeConfiguration(): array
     {
         return [
             'middleware' => ['auth'],
