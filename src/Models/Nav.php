@@ -73,17 +73,17 @@ class Nav extends Model
 //                'title' => '🔖 Săn Coupon',
 //                'active' => '',
 //            ],
-            [
-                'link' => 'https://tweb.com.vn/sl/6539fd6',
-                'title' => '🔖 Thiết Kế Landing Page ',
-                'active' => '',
-            ],
-
 //            [
-//                'link' => base_url('tool/facebook-avatar'),
-//                'title' => '🪄 Tạo ảnh facebook tích xanh',
-//                'active' => 'facebook_avatar',
+//                'link' => 'https://tweb.com.vn/sl/6539fd6',
+//                'title' => '🔖 Thiết Kế Landing Page ',
+//                'active' => '',
 //            ],
+
+            [
+                'link' => base_url('tool/facebook-avatar'),
+                'title' => '🪄 Tạo ảnh facebook tích xanh',
+                'active' => 'facebook_avatar',
+            ],
         ];
     }
 }

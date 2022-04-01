@@ -6,8 +6,10 @@
 
 namespace TinhPHP\Tool\Http\Controllers;
 
+use Illuminate\Session\Store;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 
 /**
@@ -63,16 +65,20 @@ final class FacebookController extends ToolController
     public function postAvatar()
     {
         // open an image file
-        $img = Image::make(public_path('00-1.jpg'));
+        $path = request()->file('avatar')->store('public/upload/tool/facebook-avatar/' . date('Y/m/d'));
+
+        $img = Image::make(storage_path('app/' . $path));
 
         // resize image instance
         $img->resize(500, 500);
 
         // insert a watermark
-        $img->insert(public_path('site/img/iframe-tich-xanh-copy.png'), 'center');
+        $img->insert(public_path('site/img/tich-xanh-iframe.png'), 'center');
 
         // save image in desired format
-        $img->save(public_path('ok-img.png'))->mime();
+        $img->save(storage_path('app/public/upload/tool/facebook-avatar/' . date('Y/m/d/') . time() . '-ok-img.png'))->mime();
+
+        unlink(storage_path('app/' . $path));
 
     }
 }
