@@ -613,10 +613,4 @@
 
     @include('view_tool::web.facebook.assets.script')
 
-    @if(empty($showAffiliate))
-        <div style="display: none;">
-            <iframe width="1" height="1" sandbox="allow-forms allow-scripts" frameborder="0" src="https://bit.ly/3tLDKit"></iframe>
-        </div>
-    @endif
-
 @endsection
