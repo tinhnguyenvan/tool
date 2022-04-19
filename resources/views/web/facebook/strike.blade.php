@@ -3,8 +3,6 @@
 @section('content')
     <div class="row container">
         <div class="col s12 l12">
-            @include('view_tool::web.ads.gg_horizontal')
-
             <div id="font-line" class="section scrollspy">
                 <h1 class="h1-title">Tạo chữ <s>gạch ngang</s> trên facebook</h1>
 
