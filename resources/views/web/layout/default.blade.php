@@ -30,8 +30,7 @@
                                 {!! $item['title'] !!} <i class="material-icons right">arrow_drop_down</i>
                             </a>
                         @else
-                            <a class=" @if($active_menu == $item['active']) active @endif" target="_blank"
-                               href="{{ $item['link'] }}">
+                            <a class=" @if($active_menu == $item['active']) active @endif" href="{{ $item['link'] }}">
                                 {!! $item['title'] !!}
                             </a>
                         @endif
